@@ -17,11 +17,11 @@ export default function Navbar() {
 
   return (
     <nav className="fixed w-full z-50 top-0 start-0 border-b border-sage-200 bg-cream-100/95 backdrop-blur-sm transition-all duration-300">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <div className="max-w-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
           {/* Logo Placeholder - Update src with your actual logo path */}
           <div className="relative w-10 h-10 overflow-hidden rounded-full border border-sage-300">
-             <Image src="/logo-main.jpg" alt="Walls Alive Logo" fill className="object-cover" />
+             <Image src="/logo-main.jpeg" alt="Walls Alive Logo" fill className="object-cover" />
           </div>
           <span className="self-center text-2xl font-serif font-bold whitespace-nowrap text-sage-800">
             Walls! Alive

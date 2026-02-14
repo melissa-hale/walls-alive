@@ -1,26 +1,43 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* 1. Define Brand Colors */
+  --color-sage-50: #f4f7f5;
+  --color-sage-100: #e3ebe5;
+  --color-sage-200: #c5d6c9;
+  --color-sage-300: #9bb6a3;
+  --color-sage-400: #74937d;
+  --color-sage-500: #5f7d64; /* Primary */
+  --color-sage-600: #4a644f;
+  --color-sage-700: #3c5140;
+  --color-sage-800: #324235;
+  --color-sage-900: #2a372d;
+
+  --color-terracotta-50: #fbf6f4;
+  --color-terracotta-100: #f6ebe7;
+  --color-terracotta-200: #ebd3ca;
+  --color-terracotta-300: #deafa0;
+  --color-terracotta-400: #cf866f;
+  --color-terracotta-500: #e5906f; /* Accent */
+  --color-terracotta-600: #d97148;
+  --color-terracotta-700: #c6542e;
+
+  --color-cream-50: #faf9f7;
+  --color-cream-100: #f2f0eb; /* Main BG */
+  --color-cream-200: #e8e4db;
+  --color-cream-300: #d8d2c4;
+
+  /* 2. Define Fonts (Mapped to layout.tsx variables) */
+  --font-serif: var(--font-libre), serif;
+  --font-sans: var(--font-inter), sans-serif;
+  
+  /* 3. Add Custom Background Image */
+  --background-image-paper-texture: url('/paper-texture.png');
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* 4. Base Styles */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-cream-100);
+  color: var(--color-sage-900);
+  font-family: var(--font-sans);
 }
