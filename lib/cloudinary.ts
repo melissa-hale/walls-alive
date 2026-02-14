@@ -12,27 +12,47 @@ export async function getGalleryImages() {
     console.warn("Cloudinary credentials missing. Returning empty gallery.");
     return [];
   }
-try {
-    const res = await cloudinary.api.resources();
-    console.log(res)
 
-} catch (error) {
-//   try {
-//     const results = await cloudinary.search
-//       .expression(`folder:${process.env.NEXT_PUBLIC_CLOUDINARY_FOLDER || 'djeemv7hn'}`)
-//       .sort_by('created_at', 'desc')
-//       .max_results(50)
-//       .execute();
+  // The folder you want to filter by
+  const targetFolder = process.env.NEXT_PUBLIC_CLOUDINARY_FOLDER || 'walls-alive-gallery';
 
-//       console.log(results)
+  try {
+    const allImages = [];
+    let nextCursor = null;
 
-//     return results.resources.map((resource: any) => ({
-//       id: resource.public_id,
-//       url: resource.secure_url,
-//       width: resource.width,
-//       height: resource.height,
-//     }));
-//   } catch (error) {
+    // Loop until we have fetched ALL uploads
+    do {
+      const response: any = await cloudinary.api.resources({
+        type: 'upload',
+        resource_type: 'image',
+        max_results: 100, // Fetch more per batch to reduce calls
+        next_cursor: nextCursor, 
+        // REMOVED: prefix (because your public_ids don't have the folder name)
+      });
+
+      // Add this batch to our master list
+      allImages.push(...response.resources);
+      
+      // Update the cursor
+      nextCursor = response.next_cursor;
+      
+    } while (nextCursor);
+
+    // Filter by asset_folder explicitly in JavaScript
+    const filteredImages = allImages.filter((resource: any) => 
+      resource.asset_folder === targetFolder
+    );
+
+    // Return the clean data
+    return filteredImages.map((resource: any) => ({
+      id: resource.public_id,
+      url: resource.secure_url,
+      width: resource.width,
+      height: resource.height,
+      alt: resource.context?.custom?.alt || "Wallpaper Installation Project" // Optional: Use metadata if you add it later
+    }));
+
+  } catch (error) {
     console.error("Cloudinary fetch error:", error);
     return [];
   }

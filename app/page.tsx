@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CheckCircle, Star, PenTool, ShieldCheck, MapPin } from "lucide-react";
+import { GoogleMapsEmbed } from '@next/third-parties/google';
 
 export default function Home() {
   return (
