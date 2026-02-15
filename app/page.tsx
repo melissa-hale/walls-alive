@@ -110,9 +110,17 @@ export default function Home() {
       <section className="py-20 bg-sage-50">
         <div className="container px-4 mx-auto flex flex-col md:flex-row items-center gap-12">
           <div className="w-full md:w-1/2">
-             <div className="bg-sage-200 h-64 w-full rounded-2xl flex items-center justify-center">
-                {/* Map Placeholder */}
-                <span className="text-sage-600 font-serif italic">Map Visual of Central Texas</span>
+             {/* REPLACED: Placeholder div with GoogleMapsEmbed */}
+             <div className="h-96 w-full rounded-2xl overflow-hidden shadow-lg border-4 border-white">
+                <GoogleMapsEmbed
+                  apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || ""}
+                  height={400}
+                  width="100%"
+                  mode="place"
+                  q="Greater Austin, TX"
+                  loading="lazy"
+                  style="border:0; height: 100%; width: 100%;"
+                />
              </div>
           </div>
           <div className="w-full md:w-1/2">
