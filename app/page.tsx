@@ -8,51 +8,57 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       
       {/* Hero Section */}
-      <section className="relative pt-12 pb-24 lg:pt-24 lg:pb-32 overflow-hidden">
-        <div className="container px-4 mx-auto">
-          <div className="flex flex-wrap items-center -mx-4">
-            <div className="w-full lg:w-1/2 px-4 mb-12 lg:mb-0">
-              <span className="inline-block py-1 px-3 mb-4 text-xs font-semibold tracking-widest text-terracotta-600 uppercase bg-terracotta-50 rounded-full">
-                Veteran Owned & Operated
-              </span>
-              <h1 className="mb-6 text-4xl lg:text-6xl font-serif font-bold text-sage-900 leading-tight">
-                Professional Wallpaper Installation
-              </h1>
-              <p className="mb-8 text-lg text-sage-700 leading-relaxed max-w-lg">
-                Bringing over 40 years of precision craftsmanship to Texas homes and businesses. 
-                Honest work, fair pricing, and meticulous attention to detail.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Link href="/contact" className="inline-block py-4 px-8 text-sm font-bold text-cream-50 bg-sage-600 hover:bg-sage-700 rounded-lg transition-all shadow-lg hover:shadow-xl">
-                  Get a Free Quote
-                </Link>
-                <Link href="/gallery" className="inline-block py-4 px-8 text-sm font-bold text-sage-800 bg-cream-200 hover:bg-cream-300 rounded-lg transition-all">
-                  View Our Work
-                </Link>
+      {/* CHANGED: min-h-[85vh] -> min-h-screen to match 16:9 aspect ratio better */}
+      <section className="relative flex items-center justify-center min-h-screen pt-20 pb-20 overflow-hidden">
+        {/* Background Image Layer */}
+        <div className="absolute inset-0 z-0 bg-cream-100">
+           <Image 
+             src="/hero.jpg" 
+             alt="Wallpaper installation background" 
+             fill
+             /* CHANGED: object-center -> object-top. 
+                This anchors the image to the top edge so heads/ceilings don't get cut off 
+                when the screen gets wider. */
+             className="object-cover object-top opacity-20"
+             quality={90}
+             priority
+           />
+           {/* Gradient Overlay for better text readability */}
+           <div className="absolute inset-0 bg-linear-to-b from-cream-100/30 via-cream-100/10 to-cream-100/90" />
+        </div>
+
+        {/* Centered Content */}
+        <div className="relative z-10 container px-4 mx-auto text-center">
+          <div className="inline-flex items-center gap-2 py-1 px-4 mb-8 text-xs font-bold tracking-widest text-terracotta-700 uppercase bg-terracotta-50/90 backdrop-blur-sm rounded-full border border-terracotta-100 shadow-sm">
+            <span className="w-2 h-2 rounded-full bg-terracotta-500 animate-pulse"></span>
+            Veteran Owned & Operated
+          </div>
+          
+          <h1 className="mb-6 text-5xl lg:text-7xl font-serif font-bold text-sage-900 leading-[1.1] drop-shadow-sm">
+            Professional Wallpaper<br className="hidden md:block" /> Installation
+          </h1>
+          
+          <p className="mb-10 text-xl text-sage-900 leading-relaxed max-w-2xl mx-auto font-medium drop-shadow-sm">
+            Bringing over 40 years of precision craftsmanship to Texas homes and businesses. 
+            Honest work, fair pricing, and meticulous attention to detail.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
+            <Link href="/contact" className="inline-flex items-center justify-center py-4 px-8 text-lg font-bold text-cream-50 bg-sage-600 hover:bg-sage-700 rounded-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+              Get a Free Quote
+            </Link>
+            <Link href="/gallery" className="inline-flex items-center justify-center py-4 px-8 text-lg font-bold text-sage-800 bg-white/80 hover:bg-white rounded-lg transition-all border border-sage-200 backdrop-blur-sm hover:shadow-md">
+              View Our Work
+            </Link>
+          </div>
+
+          {/* Trust Badge Integrated */}
+          <div className="inline-flex items-center gap-3 py-3 px-6 bg-white/70 backdrop-blur-md rounded-2xl border border-white/50 shadow-sm">
+              <ShieldCheck className="text-terracotta-500" size={24} />
+              <div className="text-left">
+                <p className="font-serif font-bold text-sage-900 leading-none text-sm">WIA Accredited</p>
+                <p className="text-xs text-sage-800 mt-0.5 font-medium">Wallcovering Installers Association Member</p>
               </div>
-            </div>
-            <div className="w-full lg:w-1/2 px-4">
-              <div className="relative mx-auto p-8 lg:ml-auto max-w-lg">
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl border-8 border-white/50 aspect-square">
-                    {/* Placeholder for the provided main logo/illustration */}
-                    <Image 
-                      src="/logo-main.jpeg" 
-                      alt="Don working on wallpaper" 
-                      fill
-                      className="object-cover"
-                      priority
-                    />
-                </div>
-                {/* Floating Badge */}
-                <div className="absolute -bottom-6 -left-6 bg-cream-50 p-6 rounded-xl shadow-xl border border-sage-100 max-w-xs hidden md:block">
-                  <div className="flex items-center gap-3 mb-2">
-                     <ShieldCheck className="text-terracotta-500" size={32} />
-                     <p className="font-serif font-bold text-sage-800">WIA Accredited</p>
-                  </div>
-                  <p className="text-sm text-sage-600">Wallcovering Installers Association Member. Fully Insured.</p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -110,7 +116,6 @@ export default function Home() {
       <section className="py-20 bg-sage-50">
         <div className="container px-4 mx-auto flex flex-col md:flex-row items-center gap-12">
           <div className="w-full md:w-1/2">
-             {/* REPLACED: Placeholder div with GoogleMapsEmbed */}
              <div className="h-96 w-full rounded-2xl overflow-hidden shadow-lg border-4 border-white">
                 <GoogleMapsEmbed
                   apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || ""}
