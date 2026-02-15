@@ -11,7 +11,7 @@ export default function Footer() {
           <div className="col-span-1 md:col-span-1">
             <h2 className="text-2xl font-serif font-bold text-cream-50 mb-4">Walls! Alive</h2>
             <p className="text-sage-300 mb-6 text-sm leading-relaxed">
-              Veteran-owned craftsmanship bringing life to Austin walls since 1995. WIA Accredited and fully insured.
+              Veteran-owned craftsmanship bringing life to Austin walls since 1977. WIA Accredited and fully insured.
             </p>
             <div className="flex gap-4">
               {/* Social Placeholders */}
@@ -42,11 +42,11 @@ export default function Footer() {
             <ul className="space-y-4 text-sm text-sage-200">
               <li className="flex items-start gap-3">
                 <Phone size={18} className="text-sage-400 mt-0.5" />
-                <span>(512) 555-0123</span>
+                <span>(832) 788-3667</span>
               </li>
               <li className="flex items-start gap-3">
                 <Mail size={18} className="text-sage-400 mt-0.5" />
-                <span>auto_don@zohomail.com</span>
+                <span>dondye57@yahoo.com</span>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin size={18} className="text-sage-400 mt-0.5" />

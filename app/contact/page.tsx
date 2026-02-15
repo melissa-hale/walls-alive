@@ -11,12 +11,12 @@ export default function ContactPage() {
   return (
     <div className="bg-cream-50 min-h-screen">
       {/* Header Section */}
-      <section className="bg-sage-900 text-cream-100 py-16 lg:py-24">
+      <section className="bg-sage-900 text-cream-50 py-20 lg:py-32">
         <div className="container px-4 mx-auto text-center">
           <span className="text-terracotta-400 font-bold tracking-widest uppercase text-sm mb-4 block">
             Start Your Project
           </span>
-          <h1 className="text-4xl lg:text-5xl font-serif font-bold mb-6">
+          <h1 className="text-4xl lg:text-6xl font-serif font-bold mb-6">
             Get a Free Quote
           </h1>
           <p className="text-sage-200 max-w-2xl mx-auto text-lg leading-relaxed">
@@ -46,8 +46,8 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="text-sm text-sage-500 font-bold uppercase tracking-wider mb-1">Phone</p>
-                      <a href="tel:5125550123" className="text-lg font-medium text-sage-800 hover:text-terracotta-600 transition-colors">
-                        (512) 555-0123
+                      <a href="tel:8327883667" className="text-lg font-medium text-sage-800 hover:text-terracotta-600 transition-colors">
+                        (832) 788-3667
                       </a>
                     </div>
                   </li>
@@ -57,8 +57,8 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="text-sm text-sage-500 font-bold uppercase tracking-wider mb-1">Email</p>
-                      <a href="mailto:auto_don@zohomail.com" className="text-lg font-medium text-sage-800 hover:text-terracotta-600 transition-colors">
-                        auto_don@zohomail.com
+                      <a href="mailto:dondye57@yahoo.com" className="text-lg font-medium text-sage-800 hover:text-terracotta-600 transition-colors">
+                        dondye57@yahoo.com
                       </a>
                     </div>
                   </li>

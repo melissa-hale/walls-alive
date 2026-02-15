@@ -16,10 +16,10 @@ export default function Home() {
                 Veteran Owned & Operated
               </span>
               <h1 className="mb-6 text-4xl lg:text-6xl font-serif font-bold text-sage-900 leading-tight">
-                Master Wallpaper Installation Since 1995
+                Professional Wallpaper Installation
               </h1>
               <p className="mb-8 text-lg text-sage-700 leading-relaxed max-w-lg">
-                Bringing 30+ years of precision craftsmanship to Austin homes and businesses. 
+                Bringing over 40 years of precision craftsmanship to Texas homes and businesses. 
                 Honest work, fair pricing, and meticulous attention to detail.
               </p>
               <div className="flex flex-wrap gap-4">
@@ -32,7 +32,7 @@ export default function Home() {
               </div>
             </div>
             <div className="w-full lg:w-1/2 px-4">
-              <div className="relative mx-auto lg:ml-auto max-w-lg">
+              <div className="relative mx-auto p-8 lg:ml-auto max-w-lg">
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl border-8 border-white/50 aspect-square">
                     {/* Placeholder for the provided main logo/illustration */}
                     <Image 
@@ -62,7 +62,7 @@ export default function Home() {
         <div className="container px-4 mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div className="p-4">
-              <h3 className="text-3xl font-serif font-bold text-terracotta-400 mb-1">30+</h3>
+              <h3 className="text-3xl font-serif font-bold text-terracotta-400 mb-1">40+</h3>
               <p className="text-sm opacity-90">Years Experience</p>
             </div>
             <div className="p-4">
