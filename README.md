@@ -28,3 +28,9 @@ This site is optimized for Vercel.
 1. Push code to GitHub.
 2. Import project in Vercel.
 3. Add the Environment Variables (see `.env.local.example`).
+
+
+## TO DO
+
+1. Implement GA in layout
+2. Update robots so the site is discoverable
