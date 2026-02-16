@@ -4,9 +4,10 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: '*',
-      allow: '/',
-      disallow: '/private/', // Block private folders if you ever have them
+      allow: undefined, // Remove the allow rule
+      disallow: '/',    // Block EVERYTHING
     },
+    // You can keep the sitemap or remove it for now
     sitemap: 'https://wallsalivetx.com/sitemap.xml',
   };
 }
