@@ -11,7 +11,7 @@ export default function Footer() {
           <div className="col-span-1 md:col-span-1">
             <h2 className="text-2xl font-logo font-bold text-cream-50 mb-4">Walls! Alive</h2>
             <p className="text-sage-300 mb-6 text-sm leading-relaxed">
-              Veteran-owned craftsmanship bringing life to Austin walls since 1977. WIA Accredited and fully insured.
+              Veteran-owned craftsmanship bringing life to Texas walls since 1977. WIA Accredited and fully insured.
             </p>
             <div className="flex gap-4">
               {/* Social Placeholders */}
@@ -74,7 +74,7 @@ export default function Footer() {
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 bg-terracotta-500 rounded-full"></span>
-                  30+ Years Experience
+                  40+ Years Experience
                 </li>
               </ul>
             </div>
