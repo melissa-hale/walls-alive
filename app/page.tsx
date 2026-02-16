@@ -1,46 +1,56 @@
 import Image from "next/image";
 import Link from "next/link";
-import { CheckCircle, Star, PenTool, ShieldCheck, MapPin } from "lucide-react";
+import { CheckCircle, Star, PenTool, ShieldCheck, MapPin, LucideIcon } from "lucide-react";
 import { GoogleMapsEmbed } from '@next/third-parties/google';
+import { getHomeData } from "@/sanity/lib/queries";
 
-export default function Home() {
+const iconMap: Record<string, LucideIcon> = {
+  'star': Star,
+  'pen-tool': PenTool,
+  'check-circle': CheckCircle,
+};
+
+export default async function Home() {
+  const data = await getHomeData();
+  
+  // Default fallbacks to prevent crashes on fresh CMS install
+  const heroTitle = data?.heroTitle || "Professional Wallpaper Installation";
+  const heroDesc = data?.heroDescription || "Bringing precision craftsmanship to Texas homes.";
+  const cities = data?.serviceArea || ['Austin', 'Round Rock'];
+
   return (
     <div className="flex flex-col min-h-screen">
       
       {/* Hero Section */}
-      {/* CHANGED: min-h-[85vh] -> min-h-screen to match 16:9 aspect ratio better */}
       <section className="relative flex items-center justify-center min-h-screen pt-20 pb-20 overflow-hidden">
-        {/* Background Image Layer */}
         <div className="absolute inset-0 z-0 bg-cream-100">
-           <Image 
-             src="/hero.jpg" 
-             alt="Wallpaper installation background" 
-             fill
-             /* CHANGED: object-center -> object-top. 
-                This anchors the image to the top edge so heads/ceilings don't get cut off 
-                when the screen gets wider. */
-             className="object-cover object-top opacity-20"
-             quality={90}
-             priority
-           />
-           {/* Gradient Overlay for better text readability */}
+           {data?.heroImageUrl ? (
+             <Image 
+               src={data.heroImageUrl} 
+               alt="Wallpaper installation background" 
+               fill
+               className="object-cover object-top opacity-20"
+               quality={90}
+               priority
+             />
+           ) : (
+             <div className="absolute inset-0 bg-sage-200/20" />
+           )}
            <div className="absolute inset-0 bg-linear-to-b from-cream-100/30 via-cream-100/10 to-cream-100/90" />
         </div>
 
-        {/* Centered Content */}
         <div className="relative z-10 container px-4 mx-auto text-center">
           <div className="inline-flex items-center gap-2 py-1 px-4 mb-8 text-xs font-bold tracking-widest text-terracotta-700 uppercase bg-terracotta-50/90 backdrop-blur-sm rounded-full border border-terracotta-100 shadow-sm">
             <span className="w-2 h-2 rounded-full bg-terracotta-500 animate-pulse"></span>
             Veteran Owned & Operated
           </div>
           
-          <h1 className="mb-6 text-5xl font-serif font-bold text-sage-900 leading-[1.1] drop-shadow-sm">
-            Professional Wallpaper<br className="hidden md:block" /> Installation
+          <h1 className="mb-6 text-5xl lg:text-7xl font-serif font-bold text-sage-900 leading-[1.1] drop-shadow-sm">
+            {heroTitle}
           </h1>
           
           <p className="mb-10 text-xl text-sage-900 leading-relaxed max-w-2xl mx-auto font-medium drop-shadow-sm">
-            Bringing over 40 years of precision craftsmanship to Texas homes and businesses. 
-            Honest work, fair pricing, and meticulous attention to detail.
+            {heroDesc}
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
@@ -52,7 +62,6 @@ export default function Home() {
             </Link>
           </div>
 
-          {/* Trust Badge Integrated */}
           <div className="inline-flex items-center gap-3 py-3 px-6 bg-white/70 backdrop-blur-md rounded-2xl border border-white/50 shadow-sm">
               <ShieldCheck className="text-terracotta-500" size={24} />
               <div className="text-left">
@@ -67,22 +76,12 @@ export default function Home() {
       <section className="py-10 bg-sage-800 text-cream-100">
         <div className="container px-4 mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div className="p-4">
-              <h3 className="text-3xl font-serif font-bold text-terracotta-400 mb-1">40+</h3>
-              <p className="text-sm opacity-90">Years Experience</p>
-            </div>
-            <div className="p-4">
-              <h3 className="text-3xl font-serif font-bold text-terracotta-400 mb-1">100%</h3>
-              <p className="text-sm opacity-90">Veteran Owned</p>
-            </div>
-            <div className="p-4">
-              <h3 className="text-3xl font-serif font-bold text-terracotta-400 mb-1">Insured</h3>
-              <p className="text-sm opacity-90">For Your Safety</p>
-            </div>
-            <div className="p-4">
-              <h3 className="text-3xl font-serif font-bold text-terracotta-400 mb-1">Native</h3>
-              <p className="text-sm opacity-90">Texan Born & Bred</p>
-            </div>
+            {data?.stats?.map((stat: any, i: number) => (
+              <div key={i} className="p-4">
+                <h3 className="text-3xl font-serif font-bold text-terracotta-400 mb-1">{stat.value}</h3>
+                <p className="text-sm opacity-90">{stat.label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -96,18 +95,17 @@ export default function Home() {
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { title: "Residential Installation", desc: "Expert installation for powder rooms, accent walls, and full rooms.", icon: Star },
-              { title: "Custom Murals", desc: "Precision alignment for panoramic murals and artistic statement walls.", icon: PenTool },
-              { title: "Wall Prep & Removal", desc: "Safe removal of old paper and drywall repair for a perfect finish.", icon: CheckCircle },
-            ].map((s, i) => (
-              <div key={i} className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-sage-100">
-                <s.icon className="w-10 h-10 text-terracotta-500 mb-6" />
-                <h3 className="text-xl font-serif font-bold text-sage-800 mb-3">{s.title}</h3>
-                <p className="text-sage-600 mb-6">{s.desc}</p>
-                <Link href="/services" className="text-sage-800 font-semibold hover:text-terracotta-600 text-sm border-b border-terracotta-300 pb-0.5">Learn More</Link>
-              </div>
-            ))}
+            {data?.services?.map((s: any, i: number) => {
+              const Icon = iconMap[s.icon] || Star;
+              return (
+                <div key={i} className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-sage-100">
+                  <Icon className="w-10 h-10 text-terracotta-500 mb-6" />
+                  <h3 className="text-xl font-serif font-bold text-sage-800 mb-3">{s.title}</h3>
+                  <p className="text-sage-600 mb-6">{s.description}</p>
+                  <Link href="/services" className="text-sage-800 font-semibold hover:text-terracotta-600 text-sm border-b border-terracotta-300 pb-0.5">Learn More</Link>
+                </div>
+              )
+            })}
           </div>
         </div>
       </section>
@@ -136,7 +134,7 @@ export default function Home() {
             <h2 className="text-3xl font-serif font-bold text-sage-900 mb-6">Proudly Serving Central Texas</h2>
             <p className="text-sage-700 mb-6">Based in Austin, we travel to surrounding communities to bring quality craftsmanship to your doorstep.</p>
             <ul className="grid grid-cols-2 gap-3 text-sage-800 font-medium">
-              {['Austin', 'Round Rock', 'Cedar Park', 'Georgetown', 'Lakeway', 'Dripping Springs', 'Pflugerville', 'Leander'].map(city => (
+              {cities.map((city: string) => (
                 <li key={city} className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 bg-terracotta-500 rounded-full"></span>
                   {city}

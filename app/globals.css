@@ -30,6 +30,7 @@
   /* 2. Define Fonts (Mapped to layout.tsx variables) */
   --font-serif: var(--font-libre), serif;
   --font-sans: var(--font-inter), sans-serif;
+  --font-logo: var(--font-lobster), cursive;
   
   /* 3. Add Custom Background Image */
   --background-image-paper-texture: url('/paper-texture.png');

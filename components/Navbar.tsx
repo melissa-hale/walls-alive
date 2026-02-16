@@ -23,10 +23,10 @@ export default function Navbar() {
           {/* 1. LEFT: Logo */}
           <div className="shrink-0 flex items-center">
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="relative w-12 h-12 overflow-hidden rounded-full border border-sage-300 group-hover:border-terracotta-400 transition-colors">
+              <div className="relative w-12 h-12 overflow-hidden rounded-full border group-hover:border-sage-300 border-terracotta-400 transition-colors">
                  <Image src="/logo-main.jpeg" alt="Walls Alive Logo" fill className="object-cover" />
               </div>
-              <span className="self-center text-2xl font-[family-name(var(--font-lobster))] font-bold text-sage-800 group-hover:text-terracotta-600 transition-colors">
+              <span className="self-center text-2xl font-logo font-bold group-hover:text-sage-800 text-terracotta-600 transition-colors">
                 Walls! Alive
               </span>
             </Link>

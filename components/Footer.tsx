@@ -9,7 +9,7 @@ export default function Footer() {
           
           {/* Brand Column */}
           <div className="col-span-1 md:col-span-1">
-            <h2 className="text-2xl font-serif font-bold text-cream-50 mb-4">Walls! Alive</h2>
+            <h2 className="text-2xl font-logo font-bold text-cream-50 mb-4">Walls! Alive</h2>
             <p className="text-sage-300 mb-6 text-sm leading-relaxed">
               Veteran-owned craftsmanship bringing life to Austin walls since 1977. WIA Accredited and fully insured.
             </p>
