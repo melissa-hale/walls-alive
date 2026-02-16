@@ -1,10 +1,17 @@
 import type { Metadata } from "next";
-import { Libre_Baskerville, Inter } from "next/font/google";
+import { Libre_Baskerville, Inter, Lobster } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/react";
 import JsonLd from "@/components/JsonLd";
+
+const lobster = Lobster({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-lobster",
+  display: "swap",
+});
 
 const libre = Libre_Baskerville({ 
   subsets: ["latin"], 
@@ -34,7 +41,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${libre.variable} ${inter.variable} scroll-smooth`}>
+    <html lang="en" className={`${libre.variable} ${inter.variable} ${lobster.variable} scroll-smooth`}>
       <head>
         {/* Google Analytics Script would go here via next/script */}
       </head>

@@ -26,7 +26,7 @@ export default function Navbar() {
               <div className="relative w-12 h-12 overflow-hidden rounded-full border border-sage-300 group-hover:border-terracotta-400 transition-colors">
                  <Image src="/logo-main.jpeg" alt="Walls Alive Logo" fill className="object-cover" />
               </div>
-              <span className="self-center text-2xl font-serif font-bold text-sage-800 group-hover:text-terracotta-600 transition-colors">
+              <span className="self-center text-2xl font-[family-name(var(--font-lobster))] font-bold text-sage-800 group-hover:text-terracotta-600 transition-colors">
                 Walls! Alive
               </span>
             </Link>

@@ -34,7 +34,7 @@ export default function Home() {
             Veteran Owned & Operated
           </div>
           
-          <h1 className="mb-6 text-5xl lg:text-7xl font-serif font-bold text-sage-900 leading-[1.1] drop-shadow-sm">
+          <h1 className="mb-6 text-5xl font-serif font-bold text-sage-900 leading-[1.1] drop-shadow-sm">
             Professional Wallpaper<br className="hidden md:block" /> Installation
           </h1>
           
