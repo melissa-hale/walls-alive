@@ -21,6 +21,7 @@ export default async function AboutPage() {
       <section className="pt-16 pb-20 lg:pt-24 lg:pb-32 container px-4 mx-auto">
         <div className="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-20">
           
+          {/* <div className="w-full lg:w-1/2 space-y-8"> */}
           <div className="w-full lg:w-1/2 space-y-8">
             <span className="inline-block py-1 px-3 text-xs font-semibold tracking-widest text-terracotta-600 uppercase bg-terracotta-50 rounded-full">
               Est. 1977
@@ -39,7 +40,8 @@ export default async function AboutPage() {
             </div>
           </div>
 
-          <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
+          {/* <div className="w-full flex justify-center lg:justify-end"> */}
+          <div className="w-full lg:w-1/2 flex justify-center">
             <div className="relative w-72 h-72 lg:w-96 lg:h-96">
               <div className="absolute inset-4 bg-terracotta-100 rounded-full transform translate-x-4 translate-y-4"></div>
               
