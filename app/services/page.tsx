@@ -85,7 +85,7 @@ export default async function ServicesPage() {
             <div className="w-full lg:w-1/2 space-y-6">
               <h2 className="text-3xl font-serif font-bold text-sage-900">Working With Designers</h2>
               <p className="text-sage-700 text-lg">
-                I regularly collaborate with interior designers, architects, and home decorators across Central Texas.
+                I regularly work with interior designers, architects, and home decorators.
               </p>
               <ul className="space-y-4">
                  {/* This mapping assumes a simple string array from CMS for flexibility */}
@@ -106,7 +106,7 @@ export default async function ServicesPage() {
 
       {/* CTA Section */}
       <section className="py-24 container px-4 mx-auto text-center">
-        <h2 className="text-4xl font-serif font-bold text-sage-900 mb-6">Ready to Transform Your Walls?</h2>
+        <h2 className="text-4xl font-serif font-bold text-sage-900 mb-6">Ready to Make Your Walls Alive?</h2>
         <p className="text-lg text-sage-600 mb-10 max-w-2xl mx-auto">
           Whether you have the paper in hand or are just starting to plan, let's discuss your project.
         </p>

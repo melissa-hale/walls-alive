@@ -45,7 +45,7 @@ export default async function Home() {
             Veteran Owned & Operated
           </div>
           
-          <h1 className="mb-6 text-5xl lg:text-7xl font-serif font-bold text-sage-900 leading-[1.1] drop-shadow-sm">
+          <h1 className="mb-6 text-5xl lg:text-7xl font-serif font-bold text-sage-900 leading-[1.3] leading-[1.1] drop-shadow-sm">
             {heroTitle}
           </h1>
           
@@ -75,7 +75,7 @@ export default async function Home() {
       {/* Trust Bar */}
       <section className="py-10 bg-sage-800 text-cream-100">
         <div className="container px-4 mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
             {data?.stats?.map((stat: any, i: number) => (
               <div key={i} className="p-4">
                 <h3 className="text-3xl font-serif font-bold text-terracotta-400 mb-1">{stat.value}</h3>
@@ -91,7 +91,7 @@ export default async function Home() {
         <div className="container px-4 mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-serif font-bold text-sage-900 mb-4">Craftsmanship You Can Trust</h2>
-            <p className="text-sage-600 max-w-2xl mx-auto">We don't just hang paper; we transform spaces. From delicate grasscloths to commercial vinyls, we handle every material with respect.</p>
+            <p className="text-sage-600 max-w-2xl mx-auto">We don't just hang paper, we transform spaces. From delicate grasscloths to custom murals, we've worked with them all.</p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
@@ -120,7 +120,7 @@ export default async function Home() {
                   height={400}
                   width="100%"
                   mode="place"
-                  q="Greater Austin, TX"
+                  q="Central Texas, TX"
                   loading="lazy"
                   style="border:0; height: 100%; width: 100%;"
                 />
