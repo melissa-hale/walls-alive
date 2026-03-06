@@ -51,7 +51,7 @@ export default async function AboutPage() {
                      src={data.portraitUrl}
                      alt="Don - The Friendly Wallpaper Expert"
                      fill
-                     className="object-cover"
+                     className="object-contain"
                      priority
                    />
                 ) : (

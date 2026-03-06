@@ -13,15 +13,15 @@ export default function Footer() {
             <p className="text-sage-300 mb-6 text-sm leading-relaxed">
               Veteran-owned craftsmanship bringing life to Texas walls since 1977. WIA Accredited and fully insured.
             </p>
-            <div className="flex gap-4">
+            {/* <div className="flex gap-4"> */}
               {/* Social Placeholders */}
-              <div className="w-10 h-10 bg-sage-800 rounded-full flex items-center justify-center text-sage-400 hover:bg-terracotta-500 hover:text-white transition-colors cursor-pointer">
+              {/* <div className="w-10 h-10 bg-sage-800 rounded-full flex items-center justify-center text-sage-400 hover:bg-terracotta-500 hover:text-white transition-colors cursor-pointer">
                 <Facebook size={20} />
               </div>
               <div className="w-10 h-10 bg-sage-800 rounded-full flex items-center justify-center text-sage-400 hover:bg-terracotta-500 hover:text-white transition-colors cursor-pointer">
                 <Instagram size={20} />
-              </div>
-            </div>
+              </div> */}
+            {/* </div> */}
           </div>
 
           {/* Quick Links */}

@@ -76,12 +76,22 @@ export default async function Home() {
       <section className="py-10 bg-sage-800 text-cream-100">
         <div className="container px-4 mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
-            {data?.stats?.map((stat: any, i: number) => (
-              <div key={i} className="p-4">
-                <h3 className="text-3xl font-serif font-bold text-terracotta-400 mb-1">{stat.value}</h3>
-                <p className="text-sm opacity-90">{stat.label}</p>
-              </div>
-            ))}
+            {data?.stats?.map((stat: any, i: number) => {
+              // Check if it's the 3rd item (index 2)
+              const isLastItem = i === 2; 
+
+              return (
+                <div 
+                  key={i} 
+                  className={`p-4 ${isLastItem ? "col-span-2 md:col-span-1" : "col-span-1"}`}
+                >
+                  <h3 className="text-3xl font-serif font-bold text-terracotta-400 mb-1">
+                    {stat.value}
+                  </h3>
+                  <p className="text-sm opacity-90">{stat.label}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
