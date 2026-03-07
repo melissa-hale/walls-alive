@@ -3,6 +3,7 @@ import Link from "next/link";
 import { CheckCircle, Star, PenTool, ShieldCheck, MapPin, LucideIcon } from "lucide-react";
 import { GoogleMapsEmbed } from '@next/third-parties/google';
 import { getHomeData } from "@/sanity/lib/queries";
+import { urlFor } from "@/sanity/lib/image";
 
 const iconMap: Record<string, LucideIcon> = {
   'star': Star,
@@ -26,13 +27,18 @@ export default async function Home() {
         <div className="absolute inset-0 z-0 bg-cream-100">
            {data?.heroImageUrl ? (
              <Image 
-               src={data.heroImageUrl} 
-               alt="Wallpaper installation background" 
-               fill
-               className="object-cover object-top opacity-20"
-               quality={90}
-               priority
-             />
+                // Use Sanity's builder to cap the width so someone with a 4K monitor 
+                // doesn't accidentally download an uncompressed 10MB file.
+                src={urlFor(data.heroImageUrl).width(1920).quality(80).url()} 
+                alt="Master wallpaper installation in Austin" 
+                fill
+                // This line is the most important for performance:
+                sizes="100vw" 
+                className="object-cover object-top opacity-20"
+                priority
+                // Next.js 15+ tip: adding fetchPriority="high" can further boost LCP
+                {...({ fetchPriority: "high" } as any)} 
+              />
            ) : (
              <div className="absolute inset-0 bg-sage-200/20" />
            )}
