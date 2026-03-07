@@ -112,7 +112,15 @@ export default async function Home() {
                   <Icon className="w-10 h-10 text-terracotta-500 mb-6" />
                   <h3 className="text-xl font-serif font-bold text-sage-800 mb-3">{s.title}</h3>
                   <p className="text-sage-600 mb-6">{s.description}</p>
-                  <Link href="/services" className="text-sage-800 font-semibold hover:text-terracotta-600 text-sm border-b border-terracotta-300 pb-0.5">Learn More</Link>
+                  <Link 
+                    href="/services" 
+                    className="text-sage-800 font-semibold hover:text-terracotta-600 text-sm border-b border-terracotta-300 pb-0.5"
+                  >
+                    {/* Visually, we keep it short and professional */}
+                    More Info
+                    {/* For SEO and Screen Readers, we add the specific context */}
+                    <span className="sr-only"> on {s.title}</span>
+                  </Link>
                 </div>
               )
             })}
