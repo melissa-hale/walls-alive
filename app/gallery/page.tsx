@@ -1,11 +1,15 @@
 import Image from "next/image";
 import { getGalleryImages } from "@/lib/cloudinary";
+import type { Metadata } from "next";
 
 export const revalidate = 86400; // Revalidate every 24 hours
 
-export const metadata = {
-  title: "Project Gallery",
-  description: "View our portfolio of completed wallpaper installations across Austin and Central Texas.",
+export const metadata: Metadata = {
+  title: "Residential & Commercial Project Gallery",
+  description: "Browse our gallery of professional wallpaper installations in Texas. From luxury murals to high-end designer patterns.",
+  alternates: {
+    canonical: "/gallery",
+  },
 };
 
 export default async function GalleryPage() {

@@ -3,12 +3,21 @@ import {
   PaintRoller, Ruler, Scissors, Home, Building2, Sparkles, CheckCircle2, LucideIcon 
 } from "lucide-react";
 import { getServicesData } from "@/sanity/lib/queries";
+import type { Metadata } from "next";
 
 const iconMap: Record<string, LucideIcon> = {
   'home': Home,
   'building-2': Building2,
   'sparkles': Sparkles,
   'paint-roller': PaintRoller
+};
+
+export const metadata: Metadata = {
+  title: "Wallpaper Installation & Removal Services",
+  description: "Expert wallpapering services in Central Texas, including custom murals, delicate hand-painted papers, and professional wall preparation.",
+  alternates: {
+    canonical: "/services",
+  },
 };
 
 export default async function ServicesPage() {

@@ -28,10 +28,10 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Walls! Alive Austin",
-    default: "Walls! Alive | Master Wallpaper Installation | Austin & Central Texas",
+    template: "%s | Walls! Alive TX",
+    default: "Walls! Alive | Professional Wallpaper Installation Austin",
   },
-  description: "Veteran-owned wallpaper installation with 30+ years experience. Serving Austin, Round Rock, Cedar Park, and Central Texas. WIA accredited.",
+  description: "Veteran-owned wallpaper installation with 40+ years experience. Serving Austin, Round Rock, Cedar Park, and Central Texas. WIA accredited.",
   metadataBase: new URL('https://www.wallsalivetx.com'),
   alternates: {
     canonical: '/',

@@ -3,8 +3,11 @@ import ContactForm from "@/components/ContactForm";
 import { Phone, Mail, MapPin, Clock, Calendar } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Free Quote",
-  description: "Get a free quote for wallpaper installation in Austin and Central Texas. Residential, commercial, and custom mural services. Veteran-owned.",
+  title: "Request a Quote for Installation",
+  description: "Get a free quote for wallpaper installation in Austin and Central Texas. Residential, commercial, and custom mural services.",
+  alternates: {
+    canonical: "/contact",
+  },
 };
 
 export default function ContactPage() {

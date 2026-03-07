@@ -3,6 +3,15 @@ import Link from "next/link";
 import { Award, Heart, Shield, Clock, LucideIcon } from "lucide-react";
 import { getAboutData } from "@/sanity/lib/queries";
 import { PortableText } from "@portabletext/react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Professional Wallpaper Installer",
+  description: "Meet Don Dye, a veteran wallpaper installer with 40+ years of experience. Serving Austin and Central Texas.",
+  alternates: {
+    canonical: "/about",
+  },
+};
 
 const iconMap: Record<string, LucideIcon> = {
   'clock': Clock,
