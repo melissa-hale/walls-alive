@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     default: "Walls! Alive | Master Wallpaper Installation | Austin & Central Texas",
   },
   description: "Veteran-owned wallpaper installation with 30+ years experience. Serving Austin, Round Rock, Cedar Park, and Central Texas. WIA accredited.",
-  metadataBase: new URL('https://wallsalivetx.com'),
+  metadataBase: new URL('https://www.wallsalivetx.com'),
   alternates: {
     canonical: '/',
   },

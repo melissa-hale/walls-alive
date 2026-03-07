@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/private/', // Optional: add any folders you actually want to hide
     },
-    sitemap: 'https://wallsalivetx.com/sitemap.xml',
+    sitemap: 'https://www.wallsalivetx.com/sitemap.xml',
   };
 }
