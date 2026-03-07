@@ -4,6 +4,7 @@ import { Award, Heart, Shield, Clock, LucideIcon } from "lucide-react";
 import { getAboutData } from "@/sanity/lib/queries";
 import { PortableText } from "@portabletext/react";
 import type { Metadata } from "next";
+import { urlFor } from "@/sanity/lib/image";
 
 export const metadata: Metadata = {
   title: "Professional Wallpaper Installer",
@@ -57,12 +58,13 @@ export default async function AboutPage() {
               <div className="relative w-full h-full rounded-full overflow-hidden border-8 border-white shadow-2xl bg-white">
                 {data?.portraitUrl ? (
                    <Image
-                     src={data.portraitUrl}
-                     alt="Don - The Friendly Wallpaper Expert"
-                     fill
-                     className="object-contain"
-                     priority
-                   />
+                    src={urlFor(data.portraitUrl).width(1000).height(1000).url()} // Request only what you need
+                    alt="Don - The Friendly Wallpaper Expert"
+                    fill
+                    className="object-contain"
+                    priority // Good, keep this for "Above the Fold" images
+                    sizes="(max-width: 768px) 100vw, 50vw" // Crucial for 'fill' property
+                  />
                 ) : (
                    <div className="bg-sage-200 w-full h-full" />
                 )}
