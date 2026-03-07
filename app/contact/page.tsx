@@ -69,7 +69,7 @@ export default function ContactPage() {
                     <div>
                       <p className="text-sm text-sage-500 font-bold uppercase tracking-wider mb-1">Service Area</p>
                       <p className="text-lg font-medium text-sage-800 leading-snug">
-                        Austin, Round Rock, Cedar Park, Georgetown, Lakeway, Dripping Springs
+                        Austin, Round Rock, Cedar Park, Georgetown, Lakeway, Dripping Springs, Kyle
                       </p>
                     </div>
                   </li>

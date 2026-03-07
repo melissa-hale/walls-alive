@@ -33,11 +33,8 @@ export const metadata: Metadata = {
   },
   description: "Veteran-owned wallpaper installation with 30+ years experience. Serving Austin, Round Rock, Cedar Park, and Central Texas. WIA accredited.",
   metadataBase: new URL('https://wallsalivetx.com'),
-  
-  // delete this on launch day
-  robots: {
-    index: false,
-    follow: false,
+  alternates: {
+    canonical: '/',
   },
 };
 

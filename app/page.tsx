@@ -16,7 +16,7 @@ export default async function Home() {
   // Default fallbacks to prevent crashes on fresh CMS install
   const heroTitle = data?.heroTitle || "Professional Wallpaper Installation";
   const heroDesc = data?.heroDescription || "Bringing precision craftsmanship to Texas homes.";
-  const cities = data?.serviceArea || ['Austin', 'Round Rock'];
+  const cities = data?.serviceArea || ['Austin', 'Round Rock', 'Cedar Park', 'Georgetown', 'Dripping Springs', 'Lakeway'];
 
   return (
     <div className="flex flex-col min-h-screen">

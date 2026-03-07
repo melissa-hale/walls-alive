@@ -4,10 +4,9 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: '*',
-      allow: undefined, // Remove the allow rule
-      disallow: '/',    // Block EVERYTHING
+      allow: '/',
+      disallow: '/private/', // Optional: add any folders you actually want to hide
     },
-    // You can keep the sitemap or remove it for now
     sitemap: 'https://wallsalivetx.com/sitemap.xml',
   };
 }
